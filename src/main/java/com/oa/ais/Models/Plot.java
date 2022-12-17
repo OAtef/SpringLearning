@@ -1,16 +1,20 @@
 package com.oa.ais.Models;
 
-import lombok.*;
-import org.springframework.lang.Nullable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-import javax.persistence.*;
-import java.io.Serializable;
-import java.time.LocalDateTime;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Table(name="Plot")
-//@Data
-//@AllArgsConstructor
+@Table(name = "Plot")
 @NoArgsConstructor
 @Setter
 @Getter
@@ -20,41 +24,24 @@ public class Plot {
     @Column(name = "id", nullable = false)
     private Long id;
 
-//    @Column(name="creation_time")
-//    @Nullable
-//    private LocalDateTime creationTime;
-//
-////    @Column(name="update_time")
-//    @Nullable
-//    private LocalDateTime updateTime;
-//    @Column(name="plot_name")
+    @Column(name = "plot_name")
     private String plotName;
 
     @ManyToOne
     @JoinColumn(name = "land_id")
     private Land land;
 
+    // @OneToMany(mappedBy = "plot", cascade = { CascadeType.ALL })
+    // @Nullable
+    // private List<TimeSlot> timeSlots;
+
+    public Plot(String plotName) {
+        this.plotName = plotName;
+    }
+
     public Plot(String plotName, Land land) {
         this.plotName = plotName;
         this.land = land;
     }
 
-    //    bi-directional which means i could get the slots using plot and get the plot using slots
-//    @OneToMany(mappedBy = "plot", cascade = {CascadeType.ALL})
-//    @Nullable
-//    private List<TimeSlot> timeSlots;
-
-//    @OneToMany()
-//    @JoinColumn(name = "plot_id")
-//    @Nullable
-//    private List<TimeSlot> timeSlots;
-//
-//    public void addTimeSlot(TimeSlot timeSlot){
-//
-//        if (timeSlots == null){
-//            timeSlots = new ArrayList<>();
-//        }
-//
-//        timeSlots.add(timeSlot);
-//    }
 }

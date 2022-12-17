@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-AisApplication<ais>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.oa.ais.AisApplication",
+            "projectName": "ais",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

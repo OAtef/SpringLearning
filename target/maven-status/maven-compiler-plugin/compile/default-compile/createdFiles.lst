@@ -1,0 +1,13 @@
+com\oa\ais\Repository\LandRepository.class
+com\oa\ais\Controllers\LandController.class
+com\oa\ais\AisApplication.class
+com\oa\ais\Models\TimeSlot.class
+com\oa\ais\Models\Plot.class
+com\oa\ais\Repository\TimeSlotRepository.class
+com\oa\ais\Services\PlotServices.class
+com\oa\ais\Services\TimeSlotServices.class
+com\oa\ais\Models\Land.class
+com\oa\ais\Controllers\plotController.class
+com\oa\ais\Repository\PlotRepository.class
+com\oa\ais\Controllers\mainController.class
+com\oa\ais\Services\LandServices.class
